@@ -83,12 +83,14 @@ const config: Config = {
           position: 'left',
           label: 'Tutorial',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
+     //   {to: '/blog', label: 'Blog', position: 'left'},
+     /*
+     {
           href: 'https://github.com/Substantifik',
           label: 'GitHub',
           position: 'right',
         },
+        */
       ],
     },
     footer: {
@@ -134,7 +136,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Documentation for Substantifik`,
     },
     prism: {
       theme: prismThemes.github,
