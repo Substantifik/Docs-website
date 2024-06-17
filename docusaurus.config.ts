@@ -28,7 +28,7 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'fr', 'de', 'it', 'es'],
   },
 
   presets: [
@@ -37,18 +37,20 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          routeBasePath: '/',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+//          editUrl:
+//            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
+        blog: false,
+//        blog: {
+ //         showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+  //        editUrl:
+  //          'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+   //     },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -59,6 +61,12 @@ const config: Config = {
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
+   // Declare some <meta> tags
+   metadata: [
+    {name: 'keywords', content: 'ai, llm, inference, governed, quality, enterprise'},
+    {name: 'twitter:card', content: 'summary_large_image'},
+  ],
+
     navbar: {
       title: 'Substantifik',
       logo: {
@@ -66,6 +74,9 @@ const config: Config = {
         src: 'img/logo.svg',
       },
       items: [
+        {
+          type: 'localeDropdown',
+        },
         {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
@@ -95,17 +106,17 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
+         //   {
+         //     label: 'Stack Overflow',
+         //     href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+         //   },
+        //    {
+        //      label: 'Discord',
+        //      href: 'https://discordapp.com/invite/docusaurus',
+        //    },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'hhttps://x.com/substantifik',
             },
           ],
         },
@@ -130,6 +141,39 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  /*
+  plugins: [
+    // TailwindCSS processor plugin
+    async function tailwindProcessor(context, options) {
+      return {
+        name: "docusaurus-tailwindcss",
+        configurePostCss(postcssOptions) {
+          // Appends TailwindCSS and AutoPrefixer.
+          postcssOptions.plugins.push(require("tailwindcss"));
+          postcssOptions.plugins.push(require("autoprefixer"));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
+*/
+  headTags: [
+    // Declare some json-ld structured data
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org/',
+        '@type': 'Organization',
+        name: 'Substantifik',
+        url: 'https://substantifik.com/',
+        logo: 'https://substantifik.com/img/logos/substantifik.svg',
+      }),
+    }
+  ]
 };
 
 export default config;
