@@ -20,8 +20,11 @@ const config: Config = {
   organizationName: 'substantifik', // Usually your GitHub org/user name.
   projectName: 'Docs-website', // Usually your repo name.
 
+    // Site-Building strictness behavior
+    onDuplicateRoutes: 'throw',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+  onBrokenAnchors: 'throw',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -38,6 +41,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           routeBasePath: '/',
+          exclude: ['**/_*.{js,jsx,ts,tsx,md,mdx}', '**/_partials/**'],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
 //          editUrl:
@@ -66,7 +70,7 @@ const config: Config = {
     {name: 'keywords', content: 'ai, llm, inference, governed, quality, enterprise'},
     {name: 'twitter:card', content: 'summary_large_image'},
   ],
-
+  blog: null, // Explicitly disable the default blog plugin
     navbar: {
       title: 'Substantifik',
       logo: {
