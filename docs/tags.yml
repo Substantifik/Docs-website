@@ -1,0 +1,13 @@
+Subtantifik:
+  label: 'Subtantifik'
+  permalink: '/'
+  description: 'Docs related to the Subtantifik framework'
+
+Releases:
+  label: 'Product releases'
+  permalink: '/product-releases'
+  description: 'Content related to product releases.'
+
+# A partial tag definition is also valid
+announcements:
+  label: 'Announcements'

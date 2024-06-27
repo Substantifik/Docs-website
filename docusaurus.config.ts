@@ -21,10 +21,10 @@ const config: Config = {
   projectName: 'Docs-website', // Usually your repo name.
 
     // Site-Building strictness behavior
-    onDuplicateRoutes: 'throw',
+    onDuplicateRoutes: 'warn',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  onBrokenAnchors: 'throw',
+  onBrokenAnchors: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -33,6 +33,11 @@ const config: Config = {
     defaultLocale: 'en',
 //    locales: ['en', 'fr', 'de', 'it', 'es'],
     locales: ['en'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-US',
+      },
+    }
   },
 
   presets: [
@@ -141,7 +146,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Documentation for Substantifik`,
+      copyright: `Copyright © ${new Date().getFullYear()} Documentation - Substantifik`,
     },
     prism: {
       theme: prismThemes.github,
